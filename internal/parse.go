@@ -1,10 +1,11 @@
-package internels
+package internal
 
 import (
 	"log"
-	"mstoo/pkg"
 	"net/http"
 	"net/url"
+
+	"github.com/zhuima/mstoo/pkg"
 )
 
 func ParseUrl(urllink *url.URL, client *http.Client) (*pkg.Link, error) {

@@ -4,11 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"mstoo/internal"
-	"mstoo/pkg"
 	"net/url"
 	"os"
 	"time"
+
+	"github.com/zhuima/mstoo/internal"
+	"github.com/zhuima/mstoo/pkg"
 )
 
 func init() {

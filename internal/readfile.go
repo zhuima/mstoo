@@ -1,4 +1,4 @@
-package internels
+package internal
 
 import "os"
 
