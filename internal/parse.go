@@ -31,15 +31,19 @@ func ParseUrl(urllink *url.URL, client *http.Client) (*pkg.Link, error) {
 
 	}
 
-	link := &pkg.Link{
-		Url:    urllink,
-		Status: resp.StatusCode,
+	// var link *pkg.Link
+
+	// link = &pkg.Link{
+	// 	Url:    urllink,
+	// 	Status: resp.StatusCode,
+	// }
+
+	if resp.StatusCode >= pkg.HTTP_MIN_STATUS && resp.StatusCode <= pkg.HTTP_MAX_STATUS {
+		link := pkg.NewLink(urllink, resp.StatusCode)
+		return link, nil
+
 	}
 
-	if !link.IsHealthy() {
-		return nil, err
-
-	}
-	return link, nil
+	return nil, err
 
 }

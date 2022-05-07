@@ -43,6 +43,13 @@ func NewHttpRequest() *http.Client {
 	return client
 }
 
+func NewLink(url *url.URL, statuscode int) *Link {
+	return &Link{
+		Url:    url,
+		Status: statuscode,
+	}
+}
+
 func (l *Link) IsHealthy() bool {
 	return l.Status >= HTTP_MIN_STATUS && l.Status <= HTTP_MAX_STATUS
 }
