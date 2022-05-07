@@ -15,7 +15,7 @@ DIST_BUILD=go build -ldflags "-s -w \
 .PHONY: all lint deps test test-cov install dist clean
 
 all:
-	go build -o $(NAME) .
+	go build -o dist/$(NAME) .
 
 lint:
 	@golangci-lint run --tests=false
