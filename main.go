@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"mstoo/internels"
+	"mstoo/internal"
 	"mstoo/pkg"
 	"net/url"
 	"os"
@@ -17,7 +17,7 @@ func init() {
 func main() {
 	client := pkg.NewHttpRequest()
 
-	file, err := internels.ReadFile("./urllist.txt")
+	file, err := internal.ReadFile("./urllist.txt")
 	if err != nil {
 		log.Printf("[ERROR] Can't Read File %s", err)
 	}
@@ -35,7 +35,7 @@ func main() {
 			continue
 		}
 
-		link, err := internels.ParseUrl(reallink, client)
+		link, err := internal.ParseUrl(reallink, client)
 		if err != nil {
 			log.Printf("[ERROR] Can't Parse Url %s", err)
 			continue
